@@ -55,7 +55,12 @@ const SkillsAndCertifications = () => {
             title: 'Certificación en Atención al Cliente',
             description: 'Este programa de certificación se enfoca en mejorar las habilidades de atención al cliente y brindar una mejor experiencia a los clientes. La certificación se obtuvo en el Sena en 2022.',
             icon:Cs
-        }
+        },
+        {
+          title: 'Certificación en Atención al Cliente',
+          description: 'Este programa de certificación se enfoca en mejorar las habilidades de atención al cliente y brindar una mejor experiencia a los clientes. La certificación se obtuvo en el Sena en 2022.',
+          icon:Cs
+      }
 
     ];
 

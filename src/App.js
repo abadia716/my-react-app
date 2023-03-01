@@ -16,8 +16,11 @@ function App() {
     <ProfileA />
     <br></br>
     <SkillsAndCertifications />
+    <br></br>
     <Certifications />
+    <br></br>
     <ProfileC />
+    <br></br>
     <Portfolio />
     
 

@@ -1,0 +1,193 @@
+
+.profile-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-content-container {
+  margin-top: 30px;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.profile-description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.profile-divider {
+  border-top: 2px solid #eee;
+}
+
+.profile-bio {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.profile-skills-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.profile-skills-list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.profile-skill {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.profile-connect-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.profile-connect-list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-connect-item {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.profile-icon {
+  font-size: 2rem;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-icon:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 767px) {
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-description {
+    font-size: 1.2rem;
+  }
+  
+  .profile-bio {
+    font-size: 1rem;
+  }
+  
+  .profile-skills-header,
+  .profile-connect-header {
+    font-size: 1.2rem;
+  }
+  
+  .profile-skill {
+    font-size: 1rem;
+  }
+  
+  .profile-icon {
+    font-size: 1.5rem;
+  }
+}
+/* Añade un efecto de sombra a la imagen de perfil */
+.profile-image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Agrega un efecto de transición suave al contenedor del perfil */
+.profile-content-container {
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-content-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Agrega un efecto de transición de color al nombre del perfil */
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.profile-name:hover {
+  color: #ff7f50;
+}
+
+/* Agrega un efecto de transición de color al borde del perfil */
+.profile-divider {
+  border-top: 2px solid #eee;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.profile-divider:hover {
+  border-color: #ff7f50;
+}
+
+/* Agrega un efecto de transición suave al contenedor de habilidades */
+.profile-skills-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 0;
+  transition: all 0.3s ease-in-out;
+  text-align: justify;
+}
+
+.profile-skills-header:hover {
+  transform: scale(1.1);
+}
+
+/* Agrega un efecto de transición de color al texto de habilidades */
+.profile-skill {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  transition: color 0.3s ease-in-out;
+}
+
+.profile-skill:hover {
+  color: #ff7f50;
+}
+
+/* Agrega un efecto de transición de escala al ícono de contacto */
+.profile-icon {
+  font-size: 2rem;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Agrega un efecto de animación a las imágenes de contacto */
+.profile-connect-item img {
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-connect-item:hover img {
+  transform: rotate(360deg);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone  } from 'react-icons/fa';
 import './Portfolio.css';
 
 function Portfolio() {
@@ -38,12 +38,16 @@ function Portfolio() {
           <a href="mailto:correo@ejemplo.com">ceanabad@gmail.com</a>
         </div>
         <div className="contact-info">
+        <FaPhone />
+          <p className='Movil'>+57 316 6710912</p>
+        </div>
+        <div className="contact-info">
           <FaGithub />
-          <a href="https://www.linkedin.com/in/cesarabad%C3%ADa/?locale=es_ES">github.com/mi-usuario</a>
+          <a href="https://github.com/seuz716">github.com/seuz716</a>
         </div>
         <div className="contact-info">
           <FaLinkedin />
-          <a href="https://linkedin.com/in/mi-usuario">linkedin.com/in/mi-usuario</a>
+          <a href="https://www.linkedin.com/in/cesarabad%C3%ADa/?locale=es_ES">linkedin.com/in/cesarabadía/</a>
         </div>
       </div>
     </div>
