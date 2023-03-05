@@ -8,6 +8,7 @@ function Portfolio() {
       <div className="portfolio-intro">
         <h1>César Andrés Abadía Dávila</h1>
         <h2>Desarrollador Web Full Stack</h2>
+        <br></br>
         <p>Bienvenido a mi portafolio. Soy un desarrollador web full stack con experiencia en tecnologías como React, Node.js y MongoDB. Me apasiona el desarrollo web y disfruto creando soluciones creativas y eficientes para problemas complejos.</p>
       </div>
       <div className="portfolio-projects">

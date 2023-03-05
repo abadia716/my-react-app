@@ -3,11 +3,10 @@
 
 
 .App {
-    background-image: url(/home/seuz716/Documentos/cards-bootstrap/src/assets/treboles.png);
+    background-image: url('../src/assets/abejaGirasol.png');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh;
+    height: 100%;
     font-family: 'Orbitron';
   }  
 

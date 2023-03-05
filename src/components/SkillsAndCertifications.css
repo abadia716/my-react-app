@@ -44,7 +44,7 @@
 }
 
 .skill-card::after {
-  content: "";
+  content: "César Andrés Abadia";
   position: absolute;
   top: 0;
   left: 0;
