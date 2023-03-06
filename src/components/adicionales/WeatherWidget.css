@@ -1,0 +1,96 @@
+.weather-widget {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weather-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.weather-widget-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.weather-widget-icon {
+  height: 64px;
+  margin-right: 16px;
+}
+
+.weather-widget-details {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.weather-widget-temperature {
+  font-size: 64px;
+  margin: 0 0 16px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+.weather-widget-feels-like {
+  margin: 0 0 8px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #666;
+}
+
+.weather-widget-humidity {
+  margin: 0 0 8px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #666;
+}
+
+.weather-widget-wind {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #666;
+}
+
+.weather-widget-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.weather-widget-footer button {
+  background-color: #6ac8ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.weather-widget-footer button:hover {
+background-color: #5cb0e6;
+}
+
+  
+  
+ 
+  

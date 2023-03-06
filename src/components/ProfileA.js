@@ -50,7 +50,7 @@ const Profile = () => {
             <p className="profile-bio">
               {language === 'es' ? 'Si está buscando un desarrollador full-stack con habilidades avanzadas en tecnologías MERN, experiencia en contabilidad y análisis de datos, y una actitud de aprendizaje constante, no dude en ponerse en contacto conmigo. Estoy ansioso por trabajar en proyectos emocionantes y desafiantes que me permitan demostrar mis habilidades y contribuir al éxito de su empresa.' : 'If you are looking for a full-stack developer with advanced skills in MERN technologies, experience in accounting and data analysis, and a constant learning attitude, do not hesitate to contact me. I am eager to work on exciting and challenging projects that allow me to demonstrate my skills and contribute to the success of your company.'}
             </p>
-            <button className="boton" onClick={handleLanguageChange} > {language === 'es' ? 'To English' : 'En Español'}</button>
+            <button className="boton" onClick={handleLanguageChange} > {language === 'es' ? 'Try English' : 'En Español'}</button>
             <hr className="profile-divider my-4" />
             <h4 className="profile-skills-header">{language === 'es' ? 'Habilidades' : 'Skills'}</h4>
             <ul className="profile-skills-list">

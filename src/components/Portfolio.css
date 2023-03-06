@@ -172,7 +172,7 @@
 }
 
 :root {
-  --bg-color: #c1dfed;
+  --bg-color: rgba(193, 223, 237, 0.4);
   --text-color: #333333;
   --link-color: #0077ff;
   --link-hover-color: #0044ff;
