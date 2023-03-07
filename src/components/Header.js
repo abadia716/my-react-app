@@ -12,14 +12,12 @@ const Header = () => {
         <Navbar.Toggle aria-controls="navbar-nav" onClick={() => setOpen(!open)} />
         <Navbar.Collapse id="navbar-nav" className="justify-content-end" in={open}>
           <Nav>
-            <Nav.Link href="#">El Blog para Aprender Inglés</Nav.Link>
-            <Nav.Link href="#">SUSCRÍBETE</Nav.Link>
-            <Nav.Link href="#">Inicio</Nav.Link>
-            <Nav.Link href="#">Inglés Por Skype Particulares</Nav.Link>
-            <Nav.Link href="#">Vídeos</Nav.Link>
-            <Nav.Link href="#">Contacto</Nav.Link>
-            <Nav.Link href="#">Podcasts</Nav.Link>
-            <Nav.Link href="#">Inglés Por Skype Empresas</Nav.Link>
+          <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/blog">El Blog para Aprender Inglés</Nav.Link>
+            <Nav.Link href="/login">Suscribete</Nav.Link>
+              <Nav.Link href="/ingles">Inglés Traductor</Nav.Link>
+            <Nav.Link href="/videos">Vídeos</Nav.Link>
+            <Nav.Link href="/podcast">Podcasts</Nav.Link>
             <Button variant="outline-light">Iniciar Sesión</Button>
           </Nav>
         </Navbar.Collapse>

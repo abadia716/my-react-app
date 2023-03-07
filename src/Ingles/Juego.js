@@ -3,12 +3,20 @@ import { words } from './datos.js';
 import './Juego.css';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 function Juego() {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
 
   function generateQuestion() {
-    const randomIndex = Math.floor(Math.random() * words.word.length);
+    const randomIndex = Math.floor(Math.random() * words.length);
     const question = words[randomIndex];
     setCurrentQuestion(question);
     setAnsweredCorrectly(false);
@@ -28,7 +36,7 @@ function Juego() {
 
   const options = [currentQuestion.synonym];
   while (options.length < 4) {
-    const randomIndex = Math.floor(Math.random() * words.word.length);
+    const randomIndex = Math.floor(Math.random() * words.length);
     const randomWord = words[randomIndex].synonym;
     if (!options.includes(randomWord)) {
       options.push(randomWord);
@@ -59,12 +67,4 @@ function Juego() {
   );
 }
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-
-  };
-
- }  
 export default Juego;

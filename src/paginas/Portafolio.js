@@ -16,6 +16,7 @@ function Portafolio() {
         <WeatherWidget city="Cali" />
       </div>
       <div className="col-md-12">
+        <h3>Mis Certificaciones</h3>
         <SkillsAndCertifications />
       </div>
       <div className="col-md-20">

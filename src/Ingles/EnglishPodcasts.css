@@ -1,0 +1,38 @@
+/* Cambia el color de fondo de la página: */
+body {
+    background-color: #f8f9fa;
+  }
+
+  /* Ajusta el tamaño y el espaciado de los elementos de la lista */
+  .list-group-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+    
+  .img-fluid {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: #007bff;
+    border-bottom: 1px dotted #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    border-bottom-style: solid;
+  }
+  

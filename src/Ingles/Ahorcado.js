@@ -13,8 +13,8 @@ function Ahorcado() {
     }, []);
 
     function getRandomWord() {
-        const randomIndex = Math.floor(Math.random() * words.word.length);
-        return words[randomIndex].word.toLowerCase();
+      const randomIndex = Math.floor(Math.random() * words.length);
+      return words[randomIndex].word.toLowerCase();
     }
 
     function handleGuess(event) {
@@ -32,10 +32,13 @@ function Ahorcado() {
     }
 
     function getDisplayWord() {
-        return currentWord
-            .split('')
-            .map(letter => (guesses.includes(letter) ? letter : '_'))
-            .join(' ');
+      if (currentWord === null) {
+        return '';
+      }
+      return currentWord
+        .split('')
+        .map(letter => (guesses.includes(letter) ? letter : '_'))
+        .join(' ');
     }
 
     function isGameWon() {

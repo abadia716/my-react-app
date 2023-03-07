@@ -6,6 +6,8 @@
     margin-left: 2.58%;
     margin-right: 2.58%;
     margin-bottom: 2px;
+    justify-content: center;
+    text-align: left;
      /* Color del navbar */
   }
   
@@ -39,10 +41,7 @@
     .navbar .btn-outline-light {
       color: white;
     }
-    /* Ajusta el color de fondo del navbar */
-    .navbar {
-      background-color: white;
-    }
+   
     /* Ajusta el color de texto de los links del navbar cuando se abren */
     .navbar .navbar-collapse {
       background-color: white;
