@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/my-react-app/static/css/main.4b3f631e.css",
+    "main.js": "/my-react-app/static/js/main.04afb9ee.js",
+    "static/media/abejaGirasol.png": "/my-react-app/static/media/abejaGirasol.c7433545446b3d4246c7.png",
+    "static/media/abeja-Planta-Girasol.png": "/my-react-app/static/media/abeja-Planta-Girasol.545fd59a48ee18407829.png",
+    "static/media/Fotico.png": "/my-react-app/static/media/Fotico.2e68c5f8fab255605cf1.png",
+    "static/media/BigData.png": "/my-react-app/static/media/BigData.8b8385f9a989dfb4ca3a.png",
+    "static/media/seo.jpg": "/my-react-app/static/media/seo.7f1cfc669ce04bca07d2.jpg",
+    "static/media/Marketing.png": "/my-react-app/static/media/Marketing.0ac9189771c6062f3fbf.png",
+    "index.html": "/my-react-app/index.html",
+    "main.4b3f631e.css.map": "/my-react-app/static/css/main.4b3f631e.css.map",
+    "main.04afb9ee.js.map": "/my-react-app/static/js/main.04afb9ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b3f631e.css",
+    "static/js/main.04afb9ee.js"
+  ]
+}
