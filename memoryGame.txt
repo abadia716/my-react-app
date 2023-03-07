@@ -1,0 +1,187 @@
+import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
+
+const cardData = [
+  { id: 1, value: "A" },
+  { id: 2, value: "A" },
+  { id: 3, value: "B" },
+  { id: 4, value: "B" },
+  { id: 5, value: "C" },
+  { id: 6, value: "C" },
+  { id: 7, value: "D" },
+  { id: 8, value: "D" },
+  { id: 9, value: "E" },
+  { id: 10, value: "E" },
+  { id: 11, value: "F" },
+  { id: 12, value: "F" }
+];
+
+const Card = ({ id, value, flipped, handleClick }) => {
+  const { transform, opacity } = useSpring({
+    opacity: flipped ? 1 : 0,
+    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 }
+  });
+
+  return (
+    <div className="card" onClick={() => handleClick(id)}>
+      <animated.div
+        className="card-front"
+        style={{
+          opacity: opacity.interpolate(o => 1 - o),
+          transform
+        }}
+      />
+      <animated.div
+        className="card-back"
+        style={{
+          opacity,
+          transform: transform.interpolate(t => `${t} rotateX(180deg)`)
+        }}
+      >
+        {value}
+      </animated.div>
+    </div>
+  );
+};
+
+const MemoryGame = () => {
+  const [cards, setCards] = useState(
+    cardData.map(card => ({
+      ...card,
+      flipped: false,
+      matched: false
+    }))
+  );
+
+  const handleClick = id => {
+    setCards(
+      cards.map(card =>
+        card.id === id ? { ...card, flipped: !card.flipped } : card
+      )
+    );
+  };
+
+  return (
+    <div className="memory-game">
+      <h1>Memory Game</h1>
+      <div className="card-grid">
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            id={card.id}
+            value={card.value}
+            flipped={card.flipped}
+            handleClick={handleClick}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MemoryGame;
+
+
+-------------------------------------------------------------------------------------
+otro diseño:
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
+import "./MemoryGame.css";
+
+const cardData = [
+  { id: 1, value: "A" },
+  { id: 2, value: "A" },
+  { id: 3, value: "B" },
+  { id: 4, value: "B" },
+  { id: 5, value: "C" },
+  { id: 6, value: "C" },
+  { id: 7, value: "D" },
+  { id: 8, value: "D" },
+  { id: 9, value: "E" },
+  { id: 10, value: "E" },
+  { id: 11, value: "F" },
+  { id: 12, value: "F" },
+];
+
+const Card = ({ id, value, flipped, handleClick }) => {
+  const { transform, opacity } = useSpring({
+    opacity: flipped ? 1 : 0,
+    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 },
+  });
+
+  return (
+    <div className="card" onClick={() => handleClick(id)}>
+      <animated.div
+        className="card-front"
+        style={{
+          opacity: opacity.interpolate((o) => 1 - o),
+          transform,
+        }}
+      />
+      <animated.div
+        className="card-back"
+        style={{
+          opacity,
+          transform: transform.interpolate((t) => `${t} rotateX(180deg)`),
+        }}
+      >
+        {value}
+      </animated.div>
+    </div>
+  );
+};
+
+const MemoryGame = () => {
+  const [cards, setCards] = useState(
+    cardData.map((card) => ({
+      ...card,
+      flipped: false,
+      matched: false,
+    }))
+  );
+
+  const handleClick = (id) => {
+    setCards(
+      cards.map((card) =>
+        card.id === id ? { ...card, flipped: !card.flipped } : card
+      )
+    );
+  };
+
+  useEffect(() => {
+    // Shuffle cards
+    const shuffledCards = cardData
+      .map((card) => ({ ...card, flipped: false, matched: false }))
+      .sort(() => 0.5 - Math.random());
+    setCards(shuffledCards);
+
+    // Flip cards randomly at start
+    setTimeout(() => {
+      const flippedCards = shuffledCards.map((card) => ({
+        ...card,
+        flipped: Math.random() >= 0.5,
+      }));
+      setCards(flippedCards);
+    }, 1000);
+  }, []);
+
+  return (
+    <div className="memory-game">
+      <h1>Memory Game</h1>
+      <div className="card-grid">
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            value={card.value}
+            flipped={card.flipped}
+            handleClick={handleClick}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+
