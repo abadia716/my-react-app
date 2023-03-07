@@ -1,0 +1,126 @@
+import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
+
+const cardData = [
+  { id: 1, value: "A" },
+  { id: 2, value: "A" },
+  { id: 3, value: "B" },
+  { id: 4, value: "B" },
+  { id: 5, value: "C" },
+  { id: 6, value: "C" },
+  { id: 7, value: "D" },
+  { id: 8, value: "D" },
+  { id: 9, value: "E" },
+  { id: 10, value: "E" },
+  { id: 11, value: "F" },
+  { id: 12, value: "F" },
+  { id: 13, value: "G" },
+  { id: 14, value: "G" },
+  { id: 15, value: "H" },
+  { id: 16, value: "H" }
+];
+
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const Card = ({ id, value, flipped, handleClick }) => {
+  const [flipping, setFlipping] = useState(false);
+
+  const { transform, opacity } = useSpring({
+    opacity: flipped ? 1 : 0,
+    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 }
+  });
+
+  const handleOnClick = () => {
+    if (!flipping && !flipped) {
+      setFlipping(true);
+      handleClick(id);
+      setTimeout(() => {
+        setFlipping(false);
+      }, 1000);
+    }
+  };
+
+  return (
+    <div className="card" onClick={handleOnClick}>
+      <animated.div
+        className="card-front"
+        style={{
+          opacity: opacity.interpolate(o => 1 - o),
+          transform
+        }}
+      />
+      <animated.div
+        className="card-back"
+        style={{
+          opacity,
+          transform: transform
+            .interpolate(t => `${t} rotateX(180deg)`)
+            .interpolate(t => `${t} rotateZ(20deg)`)
+        }}
+      >
+        {value}
+      </animated.div>
+    </div>
+  );
+};
+
+const MemoryGame = () => {
+  const [cards, setCards] = useState(
+    shuffleArray(
+      cardData.map(card => ({
+        ...card,
+        flipped: false,
+        matched: false
+      }))
+    )
+  );
+  const [flippedCards, setFlippedCards] = useState([]);
+  const [matchedCards, setMatchedCards] = useState([]);
+
+  const handleClick = id => {
+    const newFlippedCards = [...flippedCards, id];
+    setFlippedCards(newFlippedCards);
+
+    if (newFlippedCards.length === 2) {
+      const [card1, card2] = newFlippedCards;
+      const [firstCard, secondCard] = cards.filter(
+        card => card.id === card1 || card.id === card2
+      );
+
+      if (firstCard.value === secondCard.value) {
+        const newMatchedCards = [...matchedCards, firstCard.id, secondCard.id];
+        setMatchedCards(newMatchedCards);
+
+        const newCards = cards.map(card =>
+          newMatchedCards.includes(card.id) ? { ...card, matched: true } : card
+        );
+        setCards(newCards);
+      }
+
+      setFlippedCards([]);
+    }
+  };
+
+  return (
+    <div className="memory-game">
+      {cards.map(card => (
+        <Card
+          key={card.id}
+          id={card.id}
+          value={card.value}
+          flipped={card.flipped || matchedCards.includes(card.id)}
+          handleClick={handleClick}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default MemoryGame;
