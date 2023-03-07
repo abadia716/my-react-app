@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand>Nombre del sitio</Navbar.Brand>
+        <Navbar.Brand>Sizas</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" onClick={() => setOpen(!open)} />
         <Navbar.Collapse id="navbar-nav" className="justify-content-end" in={open}>
           <Nav>
